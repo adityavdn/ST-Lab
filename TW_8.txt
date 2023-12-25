@@ -1,7 +1,8 @@
-per = float(input("Enter the percentage: "))
+#Letter grading program
+per = float(input())
 
 if per < 0 or per > 100:
-    print("Invalid percentage, enter again")
+    print("Invalid input")
 else:
     if per >= 90:
         grade = 'A'
@@ -13,11 +14,11 @@ else:
         grade = 'D'
     else:
         grade = 'E'
-
+    
     if grade == 'A':
-        print("EXCELLENT")
+        print("Excellent")
     elif grade == 'B':
-        print("Very Good")
+        print("Very good")
     elif grade == 'C':
         print("Good")
     elif grade == 'D':
@@ -25,4 +26,4 @@ else:
     else:
         print("Satisfactory")
         
-    print(f"The percentage = {per} and grade is {grade}")
+    print(f"The percentage  = {per} and grade is {grade}")
