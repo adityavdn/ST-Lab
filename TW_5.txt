@@ -1,0 +1,36 @@
+# Initializing lock, stock, and barrel prices
+lock_price = 45
+stock_price = 30
+barrel_price = 25
+
+# Initializing Production limits
+lock_limit = 70
+stock_limit = 80
+barrel_limit = 90
+
+# Initializing Commission levels
+commission_level_1 = 0.10
+commission_level_2 = 0.15
+commission_level_3 = 0.20
+
+# Collecting the salesperson's inputs
+locks_sold = int(input("Enter the number of locks sold: "))
+stocks_sold = int(input("Enter the number of stocks sold: "))
+barrels_sold = int(input("Enter the number of barrels sold: "))
+
+# Calculating total sales
+total_sales = (locks_sold * lock_price) + (stocks_sold * stock_price) + (barrels_sold * barrel_price)
+
+# Printing total sales
+print("The total sales for the salesperson is: $" + str(total_sales))
+
+# Calculating commission
+if total_sales <= 1000:
+    commission = total_sales * commission_level_1
+elif total_sales <= 1800:
+    commission = (1000 * commission_level_1) + ((total_sales - 1000) * commission_level_2)
+else:
+    commission = (1000 * commission_level_1) + (800 * commission_level_2) + ((total_sales - 1800) * commission_level_3)
+
+# Printing the result
+print("The total commission for the salesperson is: $" + str(commission))

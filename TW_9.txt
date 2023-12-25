@@ -1,0 +1,41 @@
+def NextDate(month, date, year):
+    # Checking for valid inputs
+    if month not in range(1, 13):
+        print("Value of month not in the range 1...12")
+        return
+    elif date not in range(1, 32):
+        print("Value of date not in the range 1...31")
+        return
+    elif year not in range(1812, 2012):
+        print("Value of year not in the range 1812...2012")
+        return
+
+    # Calculating next date if given date is not invalid
+    if date == 31 and month in [1, 3, 5, 7, 8, 10, 12]:
+        date = 1
+        if month == 12:
+            month = 1
+            year += 1
+        else:
+            month += 1
+    elif date == 30 and month in [4, 6, 9, 11]:
+        date = 1
+        month += 1
+    elif date == 28 and month == 2 and year % 4 != 0:
+        date = 1
+        month += 1
+    elif date == 29 and month == 2 and year % 4 == 0:
+        date = 1
+        month += 1
+    else:
+        date += 1
+
+    print("The next date is:", month, date, year)
+
+# Driver Code
+month = 6
+date = 15
+year = 1912
+print("Date entered is:", month, date, year)
+print()
+NextDate(month, date, year)

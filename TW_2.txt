@@ -1,0 +1,26 @@
+istriangle = 'n'
+while istriangle != 'y':
+    a, b, c = map(int, input("\nEnter 3 integers which are sides of a triangle: ").split())
+    print(f"a={a}\tb={b}\tc={c}")
+    c1 = 1 <= a <= 10
+    c2 = 1 <= b <= 10
+    c3 = 1 <= c <= 10
+    if not c1:
+        print(f"The value of a={a} is not in the range of permitted values.")
+    if not c2:
+        print(f"The value of b={b} is not in the range of permitted values.")
+    if not c3:
+        print(f"The value of c={c} is not in the range of permitted values.")
+    if c1 and c2 and c3:
+        if a < b + c and b < a + c and c < a + b:
+            istriangle = 'y'
+        else:
+            print("Not a triangle")
+
+if istriangle == 'y':
+    if a == b == c:
+        print("Equilateral triangle")
+    elif a != b and b != c and c != a:
+        print("Scalene triangle")
+    else:
+        print("Isosceles triangle")
