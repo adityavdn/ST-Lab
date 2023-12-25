@@ -1,19 +1,16 @@
-a, b, c = map(int, input("Enter 3 integers which are sides of a triangle: ").split())
-print(f"a={a}, b={b}, c={c}")
-
-# To check if it's a triangle or not
+a,b,c = map(int,input("Enter 3 integers which are sides of a triangle:").split())
+print(f"a = {a},b = {b},c = {c}")
 if a < b + c and b < a + c and c < a + b:
     is_triangle = 'y'
 else:
     is_triangle = 'n'
-
-# To check which type of triangle
+    
 if is_triangle == 'y':
     if a == b and b == c:
-        print("Equilateral triangle")
+        print('Equilateral triangle.')
     elif a != b and a != c and b != c:
-        print("Scalene triangle")
+        print('Scalene triangle.')
     else:
-        print("Isosceles triangle")
+        print('Isosceles triangle.')
 else:
-    print("Not a triangle")
+    print('Not a triangle.')
