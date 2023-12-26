@@ -1,10 +1,16 @@
-def quicksort(array):
-    if len(array) < 2:
-        return array
-    else:
-        pivot = array[0]
-        less = [i for i in array[1:] if i <= pivot]
-        greater = [i for i in array[1:] if i > pivot]
-        return quicksort(less) + [pivot] + quicksort(greater)
-
-print(quicksort([10, 5, 2, 3]))
+def qs(array):
+    if len(array)<2:
+        return(array)
+    else :
+        pivot=array[0]
+        less=[i for i in array[1:] if i<=pivot]
+        greater=[i for i in array[1:] if i>pivot]
+        return qs(less)+[pivot]+qs(greater)
+    
+arr=[]
+n=int(input("Enter array size:"))
+print("enter array elements:")
+for i in range (0,n):
+    ele=int(input())
+    arr.append(ele)
+print(qs(arr))
